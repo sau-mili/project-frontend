@@ -45,17 +45,17 @@ const items = [
 const getLinkClassName = ({ isActive }: { isActive: boolean }) => {
   return [
     "w-full flex items-center gap-3 p-2 rounded-md transition-colors",
-    isActive ? "bg-green-800 text-white" : "text-gray-500 hover:bg-gray-100"
+    isActive ? "bg-med1 text-white" : "text-gray-200 hover:bg-light4 hover:text-dark1"
   ].join(" ");
 };
 
 export function AppSidebar() {
   return (
     <Sidebar className="bg-white">
-      <div className="flex items-center justify-center h-16 bg-[#224422] text-white"></div>
-      <SidebarContent className="relative">
+      <div className="flex items-center justify-center h-16 bg-dark1 text-white"></div>
+      <SidebarContent className="relative bg-[#071403]">
         <SidebarGroup>
-          <SidebarGroupLabel>Menu</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-[]">Menu</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
@@ -74,11 +74,11 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="bg-[#071403]">
         <SidebarMenu>
-          <SidebarMenuItem>
+          <SidebarMenuItem >
             <div className="bg-gray-300 h-[1px] w-full my-2"></div>
-            <ProfileDropdown />
+            <ProfileDropdown/>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>

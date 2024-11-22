@@ -71,28 +71,28 @@ export default function FarmerDashboard() {
                 </div>
                 <div className="flex gap-3 flex-wrap">
                   {farmerData.crops.map((crop, i) => (
-                    <span key={i} className="px-4 py-2 bg-emerald-50 text-emerald-700 text-sm font-medium rounded-full border border-emerald-100">
+                    <span key={i} className="px-4 py-2 bg-light3 text-dark3 text-sm font-medium rounded-full border border-med3">
                       {crop}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-4 mt-4">
-                  <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                  <Button className="bg-dark1 border-dark1 hover:bg-light1 text-white ">
                     Edit Profile
                   </Button>
-                  <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+                  <Button variant="outline" className="bg-light1 border-med1 text-dark2 hover:bg-med1 hover:text-light4">
                     View Analytics
                   </Button>
                 </div>
               </div>
               <div className="hidden lg:block border-l border-gray-200 pl-6 ml-6 space-y-3">
                 <div className="space-y-1">
-                  <p className="text-sm text-gray-500">Total Revenue</p>
-                  <p className="text-2xl font-bold text-emerald-600">$24,500</p>
+                  <p className="text-sm text-dark1">Total Revenue</p>
+                  <p className="text-2xl font-bold text-med1">$24,500</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm text-gray-500">Active Contracts</p>
-                  <p className="text-2xl font-bold text-gray-800">12</p>
+                  <p className="text-sm text-dark1">Active Contracts</p>
+                  <p className="text-2xl font-bold text-med1">12</p>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function FarmerDashboard() {
               <CardHeader className="p-6">
                 <CardTitle className="text-xl font-bold text-gray-800 flex items-center justify-between">
                   Ongoing Negotiations
-                  <Button variant="ghost" size="sm" className="text-emerald-600 hover:bg-emerald-50">
+                  <Button variant="ghost" size="sm" className="text-dark3 hover:text-dark2 hover:bg-transparent">
                     View all <ChevronRight className="h-4 w-4 ml-1" />
                   </Button>
                 </CardTitle>
@@ -115,16 +115,16 @@ export default function FarmerDashboard() {
                 <div className="space-y-4 max-h-[600px] overflow-y-auto scrollbar-hide">
                   {negotiations.map((item, index) => (
                     <div key={index} 
-                      className="p-4 bg-emerald-50 rounded-xl hover:bg-emerald-100 transition-all duration-200 border border-emerald-100"
+                      className="p-4 bg-light4 rounded-xl hover:bg-light3 transition-all duration-200 border border-med3"
                     >
                       <div className="flex justify-between items-start">
                         <div className="space-y-1">
-                          <p className="font-semibold text-gray-800">{item.buyerName}</p>
-                          <p className="text-sm text-gray-600">{item.crop}</p>
+                          <p className="font-semibold text-dark1">{item.buyerName}</p>
+                          <p className="text-sm text-dark2">{item.crop}</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-emerald-600">{item.priceOffered}</p>
-                          <p className="text-xs text-gray-500 mt-1">Updated 2h ago</p>
+                          <p className="font-bold text-dark3">{item.priceOffered}</p>
+                          <p className="text-xs text-med1 mt-1">Updated 2h ago</p>
                         </div>
                       </div>
                     </div>
@@ -141,32 +141,32 @@ export default function FarmerDashboard() {
             <Card className="bg-white/90 shadow-lg hover:shadow-xl transition-all duration-200 border-none">
               <CardHeader className="p-6 flex flex-row items-center justify-between sticky top-0 bg-white/90 z-10">
                 <CardTitle className="text-xl font-bold text-gray-800">Current Harvest Status</CardTitle>
-                <Button variant="outline" size="sm" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+                <Button variant="outline" size="sm" className="bg-dark2 text-light2 border-dark2 text-light3 hover:bg-dark3">
                   Download Report
                 </Button>
               </CardHeader>
               <CardContent className="px-6 pb-6">
                 <div className="space-y-4">
                   {currentHarvest.map((item, index) => (
-                    <div key={index} className="p-5 bg-emerald-50 rounded-lg hover:bg-emerald-100 transition-colors">
+                    <div key={index} className="p-5 bg-light4 rounded-lg hover:bg-light3 transition-colors">
                       <div className="flex items-start gap-4">
-                        <Grain className="h-6 w-6 text-emerald-600 mt-1" />
+                        <Grain className="h-6 w-6 text-dark3 mt-1" />
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-gray-800">{item.crop}</h3>
+                          <h3 className="text-lg font-semibold text-dark1">{item.crop}</h3>
                           <div className="mt-1 space-y-1">
-                            <p className="text-sm text-gray-600">Buyer: <span className="font-medium text-gray-800">{item.buyer}</span></p>
-                            <p className="text-sm text-gray-600">Delivery: <span className="font-medium text-gray-800">{item.dateOfDelivery}</span></p>
+                            <p className="text-sm text-dark2">Buyer: <span className="font-medium text-gray-800">{item.buyer}</span></p>
+                            <p className="text-sm text-dark2">Delivery: <span className="font-medium text-gray-800">{item.dateOfDelivery}</span></p>
                           </div>
                           <div className="mt-4">
                             <div className="h-2.5 bg-emerald-100 rounded-full overflow-hidden">
                               <div 
-                                className="h-full bg-emerald-600 rounded-full transition-all duration-500 ease-in-out"
+                                className="h-full bg-med1 rounded-full transition-all duration-500 ease-in-out"
                                 //style={{ width: `${item.progress}%` }}
                               />
                             </div>
                             <div className="flex justify-between mt-2">
-                              <span className="text-sm font-medium text-emerald-700">{item.progress}% Complete</span>
-                              <Button variant="link" className="text-sm text-emerald-600 h-auto p-0 hover:text-emerald-700">
+                              <span className="text-sm font-medium text-dark3">{item.progress}% Complete</span>
+                              <Button variant="link" className="text-sm text-dark3 h-auto p-0 hover:text-dark1">
                                 View contract
                               </Button>
                             </div>
